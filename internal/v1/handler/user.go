@@ -23,7 +23,7 @@ func (u *UserHandler) GetUserV1(ctx *gin.Context) {
 func (u *UserHandler) GetUserByIdV1(ctx *gin.Context) {
 	idStr := ctx.Param("id")
 
-	id, err := utils.ValidationPositiveInt("ID", idStr)
+	id, err := utils.ValidationPositveInt("ID", idStr)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
