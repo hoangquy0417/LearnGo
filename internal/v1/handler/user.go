@@ -23,7 +23,7 @@ func (u *UserHandler) GetUserV1(ctx *gin.Context) {
 func (u *UserHandler) GetUserByIdV1(ctx *gin.Context) {
 	idStr := ctx.Param("id")
 
-	id, err := utils.ValidationPositveInt("ID", idStr)
+	id, err := utils.ValidationPositiveInt("ID", idStr)
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"error": err.Error(),
@@ -66,7 +66,7 @@ func (u *UserHandler) PostUserV1(ctx *gin.Context) {
 func (u *UserHandler) PutUserV1(ctx *gin.Context) {
 	id := ctx.Param("id")
 	ctx.JSON(http.StatusOK, gin.H{
-		"Message": "Upadate User (v1)",
+		"Message": "Update User (v1)",
 		"user id": id,
 	})
 

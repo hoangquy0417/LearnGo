@@ -31,10 +31,10 @@ func ValidationRegex(fieldName, value string, re *regexp.Regexp) error {
 	return nil
 }
 
-func ValidationPositveInt(fieldName, value string) (int, error) {
+func ValidationPositiveInt(fieldName, value string) (int, error) {
 	v, err := strconv.Atoi(value)
 	if err != nil {
-		return 0, fmt.Errorf("%s must be interger", fieldName)
+		return 0, fmt.Errorf("%s must be integer", fieldName)
 	}
 	if v <= 0 {
 		return 0, fmt.Errorf("%s must be positive", fieldName)
